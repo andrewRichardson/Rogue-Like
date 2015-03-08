@@ -8,7 +8,8 @@ import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
 
-import com.arichardson.graphics.Tile;
+import com.arichardson.graphics.Sprite;
+import com.arichardson.graphics.TileMap;
 
 public class Game extends Canvas implements Runnable {
 	
@@ -31,13 +32,13 @@ public class Game extends Canvas implements Runnable {
 	//BASE VARIABLES
 	
 	//VARIABLES
-	Tile stone;
+	TileMap tiles;
 	
 	public Game() {
 		Dimension size = new Dimension(width, height);
 		setPreferredSize(size);
 		
-		stone = new Tile("stone", 16, 16, 1);
+		tiles = new TileMap(width, height, 32);
 	}
 
 	public static void main(String[] args) {
@@ -125,6 +126,8 @@ public class Game extends Canvas implements Runnable {
 		 * 
 		 * g.drawImage(b, 0, 0, null);
 		 */
+		
+		tiles.drawMap(g);
 
 		g.dispose();
 		bs.show();
