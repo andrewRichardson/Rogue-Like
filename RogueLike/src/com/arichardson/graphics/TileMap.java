@@ -50,38 +50,38 @@ public class TileMap {
 				if(tileMap[x][y-1] == 0){
 					wallMap[x][y] = 1;
 				}
-				if(tileMap[x][y-1] == 0 && tileMap[x-1][y] == 0){
-					wallMap[x][y] = 12;
-				}
-				if(tileMap[x][y-1] == 0 && tileMap[x-1][y] == 0 && tileMap[x+1][y] == 0){
-					wallMap[x][y] = 123;
-				}
-				if(tileMap[x][y-1] == 0 && tileMap[x-1][y] == 0 && tileMap[x+1][y] == 0 && tileMap[x][y+1] == 0){
-					wallMap[x][y] = 1234;
-				}
 				if(tileMap[x-1][y] == 0){
 					wallMap[x][y] = 2;
-				}
-				if(tileMap[x-1][y] == 0 && tileMap[x+1][y] == 0){
-					wallMap[x][y] = 23;
-				}
-				if(tileMap[x-1][y] == 0 && tileMap[x+1][y] == 0 && tileMap[x][y+1] == 0){
-					wallMap[x][y] = 234;
 				}
 				if(tileMap[x+1][y] == 0){
 					wallMap[x][y] = 3;
 				}
+				if(tileMap[x][y+1] == 0){
+					wallMap[x][y] = 4;
+				}
+				if(tileMap[x][y-1] == 0 && tileMap[x-1][y] == 0){
+					wallMap[x][y] = 12;
+				}
+				if(tileMap[x-1][y] == 0 && tileMap[x+1][y] == 0){
+					wallMap[x][y] = 23;
+				}
 				if(tileMap[x+1][y] == 0 && tileMap[x][y+1] == 0){
 					wallMap[x][y] = 34;
+				}
+				if(tileMap[x][y+1] == 0 && tileMap[x][y-1] == 0){
+					wallMap[x][y] = 41;
+				}
+				if(tileMap[x][y-1] == 0 && tileMap[x-1][y] == 0 && tileMap[x+1][y] == 0){
+					wallMap[x][y] = 123;
+				}
+				if(tileMap[x-1][y] == 0 && tileMap[x+1][y] == 0 && tileMap[x][y+1] == 0){
+					wallMap[x][y] = 234;
 				}
 				if(tileMap[x+1][y] == 0 && tileMap[x][y+1] == 0 && tileMap[x][y-1] == 0){
 					wallMap[x][y] = 341;
 				}
-				if(tileMap[x][y+1] == 0){
-					wallMap[x][y] = 4;
-				}
-				if(tileMap[x][y+1] == 0 && tileMap[x][y-1] == 0){
-					wallMap[x][y] = 41;
+				if(tileMap[x][y-1] == 0 && tileMap[x-1][y] == 0 && tileMap[x+1][y] == 0 && tileMap[x][y+1] == 0){
+					wallMap[x][y] = 1234;
 				}
 			}
 		}

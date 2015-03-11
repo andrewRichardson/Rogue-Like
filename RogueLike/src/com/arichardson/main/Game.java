@@ -8,8 +8,7 @@ import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
 
-import com.arichardson.graphics.Sprite;
-import com.arichardson.graphics.TileMap;
+//import com.arichardson.graphics.TileMap;
 
 public class Game extends Canvas implements Runnable {
 	
@@ -32,13 +31,13 @@ public class Game extends Canvas implements Runnable {
 	//BASE VARIABLES
 	
 	//VARIABLES
-	TileMap tiles;
+	//TileMap tiles;
 	
 	public Game() {
 		Dimension size = new Dimension(width, height);
 		setPreferredSize(size);
 		
-		tiles = new TileMap(width, height, 32);
+		//tiles = new TileMap(width, height, 16);
 	}
 
 	public static void main(String[] args) {
@@ -116,18 +115,8 @@ public class Game extends Canvas implements Runnable {
 
 		g.setColor(new Color(0x000000));
 		g.fillRect(0, 0, width, height);
-
-		/*
-		 * BufferedImage b = new BufferedImage(width, height,
-		 * BufferedImage.TYPE_INT_RGB); int[] pixels = ((DataBufferInt)
-		 * b.getRaster().getDataBuffer()).getData(); for(int y = 0; y < height;
-		 * y++){ for(int x = 0; x < width; x++){ pixels[x + y * width] =
-		 * 0xffffff+(int)(Math.random()*100000000); } }
-		 * 
-		 * g.drawImage(b, 0, 0, null);
-		 */
 		
-		tiles.drawMap(g);
+		//tiles.drawMap(g);
 
 		g.dispose();
 		bs.show();
