@@ -11,10 +11,10 @@ public class TileMap {
 	private int height;
 	private int tileSize;
 	
-	public TileMap(int wid, int ht, int tileSiz){
+	public TileMap(int wid, int ht, int tileSize){
 		this.width = wid;
 		this.height = ht;
-		this.tileSize = tileSiz;
+		this.tileSize = tileSize;
 		
 		tileMap = new int[width/tileSize][height/tileSize];
 		tiles = new Tile[width/tileSize][height/tileSize];
@@ -62,11 +62,17 @@ public class TileMap {
 				if(tileMap[x][y-1] == 0 && tileMap[x-1][y] == 0){
 					wallMap[x][y] = 12;
 				}
+				if(tileMap[x][y-1] == 0 && tileMap[x+1][y] == 0){
+					wallMap[x][y] = 13;
+				}
 				if(tileMap[x-1][y] == 0 && tileMap[x+1][y] == 0){
 					wallMap[x][y] = 23;
 				}
 				if(tileMap[x+1][y] == 0 && tileMap[x][y+1] == 0){
 					wallMap[x][y] = 34;
+				}
+				if(tileMap[x-1][y] == 0 && tileMap[x][y+1] == 0){
+					wallMap[x][y] = 24;
 				}
 				if(tileMap[x][y+1] == 0 && tileMap[x][y-1] == 0){
 					wallMap[x][y] = 41;
@@ -77,8 +83,11 @@ public class TileMap {
 				if(tileMap[x-1][y] == 0 && tileMap[x+1][y] == 0 && tileMap[x][y+1] == 0){
 					wallMap[x][y] = 234;
 				}
+				if(tileMap[x-1][y] == 0 && tileMap[x][y+1] == 0 && tileMap[x][y-1] == 0){
+					wallMap[x][y] = 124;
+				}
 				if(tileMap[x+1][y] == 0 && tileMap[x][y+1] == 0 && tileMap[x][y-1] == 0){
-					wallMap[x][y] = 341;
+					wallMap[x][y] = 134;
 				}
 				if(tileMap[x][y-1] == 0 && tileMap[x-1][y] == 0 && tileMap[x+1][y] == 0 && tileMap[x][y+1] == 0){
 					wallMap[x][y] = 1234;

@@ -1,5 +1,6 @@
 package com.arichardson.main;
 
+import com.arichardson.graphics.TileMap;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -16,7 +17,7 @@ public class Game extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
 
 	private int width = 1280;
-	private int height = (int) ((double) width / (16.0 / 9.0));
+	private int height = 704;//(int) ((double) width / (16.0 / 9.0));
 
 	private boolean running = false;
 
@@ -31,13 +32,13 @@ public class Game extends Canvas implements Runnable {
 	//BASE VARIABLES
 	
 	//VARIABLES
-	//TileMap tiles;
+	TileMap tiles;
 	
 	public Game() {
 		Dimension size = new Dimension(width, height);
 		setPreferredSize(size);
 		
-		//tiles = new TileMap(width, height, 16);
+		tiles = new TileMap(width, height, 32);
 	}
 
 	public static void main(String[] args) {
@@ -116,7 +117,7 @@ public class Game extends Canvas implements Runnable {
 		g.setColor(new Color(0x000000));
 		g.fillRect(0, 0, width, height);
 		
-		//tiles.drawMap(g);
+		tiles.drawMap(g);
 
 		g.dispose();
 		bs.show();
